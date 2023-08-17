@@ -111,6 +111,10 @@ p, li {
     justify-content: center;
 }
 
+p, ul {
+  opacity: 0.8;
+}
+
 @media only screen and (max-width: 940px) {
     .wrapper {
         display: block;
@@ -132,7 +136,7 @@ p, li {
   .block {
     display: inline-block;
     width: min(100% - 3rem, 60ch);
-    margin: 3rem 0 ;
+    margin: 3px ;
     height: 500px;
   }
 }
@@ -290,6 +294,11 @@ header {
     width: 100%;
     height: auto;
     z-index: 999;
+}
+
+#about {
+  height: auto;
+  margin-top: 1ch;
 }
 
 .logotext, nav, header {
