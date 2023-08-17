@@ -317,7 +317,7 @@ header {
   left: 0;
   width: 0px;
   overflow: hidden;
-  color: cyan;
+  color: rgb(139, 202, 202);
   transition: all 1s ease-out;
   white-space: nowrap;
   opacity: 80%;
@@ -330,7 +330,7 @@ header {
   left: 0;
   width: 0px;
   overflow: hidden;
-  color: cyan;
+  color: rgb(139, 202, 202);
   transition: all 1s ease-out;
   white-space: nowrap;
   opacity: 80%;
