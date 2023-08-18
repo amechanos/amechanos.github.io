@@ -197,6 +197,23 @@ nav > ul > li:hover {
     display: none
 }
 
+.divider {
+  width: 90vw;
+  height: 0.2ch;
+  background-color: var(--accent);
+  opacity: 0.62;
+  margin: auto;
+}
+
+.downloadButton > h2 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: light) {
     .light {
         padding: 0;
