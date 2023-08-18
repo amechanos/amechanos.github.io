@@ -25,7 +25,9 @@ Exceptions //
 While I retain the copyright to the content, there are certain exceptions:
 
 -- Code: If you find code snippets or open-source projects in the repository associated with this website, they might be subject to different licenses. Please refer to the specific project's license for more details.
+
 -- External Resources: Some content, such as images or third-party libraries, might be used on the website with appropriate licenses or permissions. These resources will be properly attributed, and their usage may be subject to their respective licenses.
+
 -- Contributions
 I welcome contributions to my website, whether it's reporting bugs, suggesting improvements, or offering new ideas. If you're interested in contributing, please fork this repository, make your changes, and submit a pull request. I appreciate your involvement in making my website even better!
 
