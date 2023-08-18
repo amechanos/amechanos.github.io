@@ -122,7 +122,7 @@ p, ul {
 .block {
     display: inline-block;
     width: min(100% - 3rem, 60ch);
-    margin: auto;
+    margin: 0 1rem;
     height: auto;
 }
 
