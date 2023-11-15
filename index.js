@@ -22,7 +22,7 @@ window.addEventListener('scroll', function() {
       var text = text[1]
   }
   
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var scrollTop = window.scrollY|| document.documentElement.scrollTop;
   console.log("Header: " + head.offsetHeight + "\nText: " + text.innerHTML)
   console.log("Offest Height: "+ logoHeight)
   if (scrollTop >= logoHeight) {
