@@ -11,9 +11,6 @@ The portfolio section of the website showcases my projects, including software d
 2. About Me
 In this section, you can learn more about me – my background, skills, and passions. It offers insights into my journey and motivations, providing context for the work presented in the portfolio.
 
-3. Blog
-The blog area features articles related to my interests, experiences, and insights. I share my thoughts on various topics, aiming to engage readers in meaningful discussions.
-
 4. Contact
 The contact section provides a convenient way for visitors to get in touch with me. Whether it's for collaboration, feedback, or just to say hello, I'm always eager to connect.
 
@@ -28,13 +25,10 @@ While I retain the copyright to the content, there are certain exceptions:
 
 -- External Resources: Some content, such as images or third-party libraries, might be used on the website with appropriate licenses or permissions. These resources will be properly attributed, and their usage may be subject to their respective licenses.
 
--- Contributions
-I welcome contributions to my website, whether it's reporting bugs, suggesting improvements, or offering new ideas. If you're interested in contributing, please fork this repository, make your changes, and submit a pull request. I appreciate your involvement in making my website even better!
-
 Conclusion //
 Thank you for taking the time to read this README file and learn more about my personal website. I hope you find the content engaging and informative. If you have any questions, feel free to reach out to me through the contact details provided on the website.
 
 Best regards,
 Jason
 
-Last updated: 18/08/23
+Last updated: /2024
