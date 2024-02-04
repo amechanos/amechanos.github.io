@@ -21,16 +21,16 @@
     --degrees: 0;
     --margin: calc(-1.7%-10vw)
 }
-
 *{box-sizing: border-box;}
 /*-------------------------------------------------------------*/
-/*-------------------------------------------------------------*/
+/*---------FOUNDATION STYLING----------------------------------*/
 /*-------------------------------------------------------------*/
 html {
     height: 100%;
     width: 100%;
     margin: 0px;
-    color-scheme: light dark;
+    color-scheme: dark;
+    position: relative;
     overflow-x: hidden;
 }
 body {
@@ -39,6 +39,8 @@ body {
     font-family: var(--fontsec);
     line-height: 1.5;
     margin: 0px;
+    position: relative;
+    overflow-x: hidden;
 }
 header {
   color: var(--text);
@@ -55,7 +57,7 @@ footer {
   padding: 5px;
 }
 /*-------------------------------------------------------------*/
-/*-------------------------------------------------------------*/
+/*------------MAIN STYLES--------------------------------------*/
 /*-------------------------------------------------------------*/
 h1, h2, h3{
     font-family: var(--fontbase);
@@ -81,7 +83,7 @@ ul, a, li {
   color: var(--secondary)
 }
 /*-------------------------------------------------------------*/
-/*-------------------------------------------------------------*/
+/*-------------CONTAINERS AND WRAPPERS-------------------------*/
 /*-------------------------------------------------------------*/
 .wrapper {
     z-index: 25;
@@ -105,8 +107,11 @@ ul, a, li {
     height: auto;
 }
 /*-------------------------------------------------------------*/
+/*-----------HEADER, NAV AND BANNER----------------------------*/
 /*-------------------------------------------------------------*/
-/*-------------------------------------------------------------*/
+.space {
+  height: 136px;
+}
 .icon > img {
     margin: 13px;
     transition: 0.2s ease-out;
@@ -187,6 +192,15 @@ nav {
   opacity: 0.7;
   z-index: -999999;
 }
+@media screen and (max-width: 520px){
+  .bg {
+    background-size: cover;
+    background-position-y: 35%;
+  }
+}
+/*-------------------------------------------------------------*/
+/*-----------HAMBURGER MENU------------------------------------*/
+/*-------------------------------------------------------------*/
 #menuToggle
 {
   display: none;
@@ -258,30 +272,29 @@ nav {
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
-#menu
-{
+#menu {
   position: absolute;
-  width: 350px;
-  height: 269px;
-  margin: -100px 0 0 -100px;
-  padding: 50px;
-  padding-top: 125px;
+  width: 100vw;
+  height: 75px;
+  padding-top: 15px;
+  margin-top: -65px;
+  margin-left: -90vw;
+  z-index: -99999;
   background: var(--secondary);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 175% 0%;
-  transform: translate(100%, 0);
-  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  
+  transform: translate(500%, 0);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
-#menu li
-{
-  padding: 10px 0;
+#menu li {
+  display: inline-block; /* Change from flex to inline-block */
+  margin-right: 20px; /* Add margin for spacing between menu items */
+  padding: 15px 0 10px 0;
   font-size: var(--step-0);
   font-family: var(--fontbase);
 }
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: none;
 }
 @media screen and (max-width: 990px){
@@ -303,6 +316,9 @@ nav {
   }
 }
 @media screen and (max-width: 520px){
+  #menu {
+    margin-left: -80vw;
+  }
   .logotext img{
     height: 15%;
   } 
@@ -317,7 +333,7 @@ nav {
   }
 }
 /*-------------------------------------------------------------*/
-/*-------------------------------------------------------------*/
+/*-----------PROJECT AND DIVIDERS------------------------------*/
 /*-------------------------------------------------------------*/
 .divider {
   height: 75px;
@@ -342,15 +358,14 @@ nav {
   margin: 1rem 0;
   display: flex;
   flex-direction: column;
-  align-items: left;
   padding: 1ch 0;
 }
 .pcontainer p {
   width: 50%;
-  margin: 0 0 0 2ch;
+  margin: 0 0 0 1em;
 }
 .pcontainer h2 {
-  margin: 0 0 0 1ch;
+  margin: 0 0 0 1rem;
 }
 .project {
   transition: all 0.3s ease-in;
@@ -365,8 +380,13 @@ nav {
     width: 90%;
   }
 }
+@media screen and (max-width: 520px){
+  .pcontainer p {
+    width: 90%;
+  }
+}
 /*-------------------------------------------------------------*/
-/*-------------------------------------------------------------*/
+/*------------VIDEO AND MUSIC EMBEDS --------------------------*/
 /*-------------------------------------------------------------*/
 .centered {
   margin: auto;
