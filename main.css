@@ -289,7 +289,7 @@ nav {
 }
 #menu li {
   display: inline-block; /* Change from flex to inline-block */
-  margin-right: 20px; /* Add margin for spacing between menu items */
+  margin-left: 20px; /* Add margin for spacing between menu items */
   padding: 15px 0 10px 0;
   font-size: var(--step-0);
   font-family: var(--fontbase);
@@ -316,8 +316,11 @@ nav {
   }
 }
 @media screen and (max-width: 520px){
+  .logoimage {
+    margin-left: 1.5rem;
+  }
   #menu {
-    margin-left: -80vw;
+    margin-left: -83vw;
   }
   .logotext img{
     height: 15%;
