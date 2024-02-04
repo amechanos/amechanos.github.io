@@ -179,7 +179,7 @@ nav {
     display: flex;
     justify-content: center;
     height: auto;
-    align-items: center;
+    align-items: flex-end;
 }
 .bg  {
   width: 100%;
