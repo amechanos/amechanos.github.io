@@ -355,6 +355,7 @@ nav {
   border-top: 3px solid var(--text) ;
 }
 .pcontainer {
+  position: relative;
   border: 3px solid var(--text);
   height: 100px;
   width: 100%;
@@ -362,22 +363,49 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 1ch 0;
+  overflow: hidden;
 }
+
+.pcontainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(188, 160, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.pcontainer:hover::before {
+  left: 0;
+}
+
+.pcontainer h2,
+.pcontainer p {
+  position: relative;
+  z-index: 1;
+}
+
 .pcontainer p {
   width: 50%;
   margin: 0 0 0 1em;
 }
+
 .pcontainer h2 {
   margin: 0 0 0 1rem;
 }
+
 .project {
   transition: all 0.3s ease-in;
 }
+
 .project:hover {
   opacity: 0.85;
-  color: var(--secondary);
-  transform: scale(0.98);
+  transform: scale(1.01);
 }
+
 @media screen and (max-width: 990px){
   .pcontainer p {
     width: 90%;
