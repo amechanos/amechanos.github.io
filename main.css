@@ -484,3 +484,67 @@ nav {
     width: 90%;
   }
 }
+/*-------------------------------------------------------------*/
+/*------------CONTACT CARD --------------------------*/
+/*-------------------------------------------------------------*/
+/* Styling for the contact card container */
+.contact_card {
+  width: 320px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  font-family: var(--fontsec);
+}
+
+/* Title styling */
+.contact_card h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.contact_card label {
+  display: block;
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-bottom: 5px;
+}
+
+/* Input and Textarea styling */
+.contact_card input[type="text"],
+.contact_card input[type="email"],
+.contact_card textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  font-size: 14px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+.contact_card input[type="text"]:focus,
+.contact_card input[type="email"]:focus,
+.contact_card textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Button styling */
+.contact_card input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact_card input[type="submit"]:hover {
+  background-color: var(--accent-two);
+}
