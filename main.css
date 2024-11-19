@@ -421,7 +421,10 @@ nav {
 /*-------------------------------------------------------------*/
 .centered {
   margin: auto;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .latest-video, .music-embed {
   display: flex;
@@ -504,7 +507,7 @@ nav {
   gap: 20px;
   justify-content: center;
   padding: 20px;
-  margin-top: 20vh;
+  margin-top: 5vh;
 }
 
 /* Individual store items */
