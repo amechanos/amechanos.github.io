@@ -93,6 +93,7 @@ ul, a, li {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .wrapper > h1, p {
   margin: 1ch 0 0 0; 
