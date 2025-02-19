@@ -529,17 +529,14 @@ nav {
   flex-wrap: wrap;
   gap: 1rem; /* Adds spacing between items */
 }
-
 #toc-links > span {
   display: inline-block;
   padding: 5px 10px;
   margin-right: 0;
 }
-
 #toc-links > span:last-child {
   border-right: none; /* Removes border from last item */
 }
-
 .chapter-link {
   display: inline-block;
   text-decoration: none;
@@ -547,13 +544,17 @@ nav {
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
-
 .chapter-link:hover {
   color: var(--accent); /* Change to your preferred hover color */
 }
-
 #table-of-contents {
   width: 100%;
   padding: 10px 0;
   border-bottom: 2px solid var(--text);
+}
+.chapter-text {
+  width: 80%
+}
+.chapter-text > p, span{
+  margin-bottom: 1.5rem;
 }
