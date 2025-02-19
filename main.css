@@ -447,32 +447,6 @@ nav {
   border: 3px solid white;
   transition: all 0.3s ease-in;
 }
-.music-embed :nth-child(3){
-  background: linear-gradient(90deg, rgba(255, 255, 255 ,0) 0%, rgba(160, 255, 173, 0.75) 75%)
-}
-.music-embed :nth-child(4){
-  background: linear-gradient(90deg, rgba(255, 255, 255 ,0) 0%, rgba(188, 160, 255, 0.75) 75%)
-}
-.music-embed :nth-child(5){
-  background: linear-gradient(90deg, rgba(255, 255, 255 ,0) 0%, rgba(255, 160, 160, 0.75) 75%)
-}
-.playhead {
-  margin-right: 0.2rem;
-  font-family: var(--fontsec);
-  color: black;
-  transition: all 0.3s ease-in;
-}
-.playhead:hover {
-  opacity: 0.85;
-  color: var(--accent);
-  transform: scale(0.98);
-}
-.album {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
 .video-container {
   position: relative;
 }
@@ -510,7 +484,6 @@ nav {
   padding: 20px;
   margin-top: 5vh;
 }
-
 /* Individual store items */
 .storeItem {
   display: flex;
@@ -525,7 +498,6 @@ nav {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
-
 /* Store item image styling */
 .storeItem img {
   width: 100%;
@@ -533,7 +505,6 @@ nav {
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
-
 /* Store item title styling */
 .storeItem .title {
   font-size: 18px;
@@ -541,14 +512,48 @@ nav {
   color: #333;
   margin: 15px 0 10px;
 }
-
 /* Price styling */
 .storeItem .price {
   font-size: 16px;
   color: #00796b;
   font-weight: bold;
 }
-
 .addButton {
   margin-top: 1rem;
+}
+/*-------------------------------------------------------------*/
+/*------------READING--------------------------*/
+/*-------------------------------------------------------------*/
+#toc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Adds spacing between items */
+}
+
+#toc-links > span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 0;
+}
+
+#toc-links > span:last-child {
+  border-right: none; /* Removes border from last item */
+}
+
+.chapter-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.chapter-link:hover {
+  color: var(--accent); /* Change to your preferred hover color */
+}
+
+#table-of-contents {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--text);
 }
