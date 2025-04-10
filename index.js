@@ -4,15 +4,79 @@ window.onscroll = function() {
     document.querySelector('.bg').style.backgroundPositionY = (-scrollPosition * 1.5) + 'px';
 };
 
-// These should be declared inside a function or after DOM is loaded
-// not at the global scope
-let tocDiv;
-let contentDiv;
+// Global variables to store references and current state
+let tocDiv, contentDiv, currentChapters;
 
-// Function to load the exported HTML content
-async function loadNovelContent() {
+// Main function to load a novel by name
+async function loadNovel(novelName) {
+    if (!novelName) {
+        console.error('Novel name is required');
+        return;
+    }
+    
+    // Get DOM elements
+    tocDiv = document.getElementById('toc-links');
+    contentDiv = document.getElementById('chapter-content');
+    
+    // Check if elements exist
+    if (!tocDiv || !contentDiv) {
+        console.error('Required DOM elements not found');
+        return;
+    }
+    
+    // Clear previous content
+    tocDiv.innerHTML = '';
+    contentDiv.innerHTML = '<p>Loading story content...</p>';
+    
     try {
-        const response = await fetch('novel.html');
+        // Load novel content
+        currentChapters = await loadNovelContent(novelName);
+        
+        // Check if we got any chapters
+        if (Object.keys(currentChapters).length === 0) {
+            contentDiv.innerHTML = '<p>No chapters found for this story.</p>';
+            return;
+        }
+        
+        // Create TOC links
+        Object.keys(currentChapters).forEach(chapterTitle => {
+            const link = document.createElement('span');
+            link.className = 'chapter-link';
+            link.textContent = chapterTitle;
+            link.onclick = () => loadChapter(chapterTitle);
+            tocDiv.appendChild(link);
+        });
+        
+        // Load the first chapter by default or from URL hash
+        const hash = decodeURIComponent(window.location.hash.slice(1));
+        if (hash && currentChapters[hash]) {
+            loadChapter(hash);
+        } else {
+            const firstChapter = Object.keys(currentChapters)[0];
+            loadChapter(firstChapter);
+        }
+        
+        // Handle browser back/forward buttons
+        window.onpopstate = function(event) {
+            if (event.state && event.state.chapter) {
+                loadChapter(event.state.chapter);
+            }
+        };
+    } catch (error) {
+        console.error('Error initializing novel:', error);
+        contentDiv.innerHTML = '<p>Error loading story content.</p>';
+    }
+}
+
+async function loadNovelContent(name) {
+    try {
+        const book = "novels/" + name + ".html";
+        const response = await fetch(book);
+        
+        if (!response.ok) {
+            throw new Error(`Failed to load novel: ${response.status} ${response.statusText}`);
+        }
+        
         const html = await response.text();
         
         const tempDiv = document.createElement('div');
@@ -21,8 +85,8 @@ async function loadNovelContent() {
         const chapterHeadings = tempDiv.querySelectorAll('h1, h2, h3');
         
         const chapters = {};
-        chapterHeadings.forEach((heading, index) => {
-            const title = heading.textContent;
+        chapterHeadings.forEach((heading) => {
+            const title = heading.textContent.trim();
             let content = [];
             let currentElement = heading.nextElementSibling;
             
@@ -41,11 +105,16 @@ async function loadNovelContent() {
     }
 }
 
-function loadChapter(chapterTitle, chapters) {
+function loadChapter(chapterTitle) {
+    if (!currentChapters || !currentChapters[chapterTitle]) {
+        console.error('Chapter not found:', chapterTitle);
+        return;
+    }
+    
     contentDiv.innerHTML = `
         <div class="chapter-text">
             <h2>${chapterTitle}</h2>
-            ${chapters[chapterTitle]}
+            ${currentChapters[chapterTitle]}
         </div>
     `;
     
@@ -58,42 +127,3 @@ function loadChapter(chapterTitle, chapters) {
     
     history.pushState({chapter: chapterTitle}, '', `#${encodeURIComponent(chapterTitle)}`);
 }
-
-async function initializePage() {
-    // Get DOM elements after making sure they exist
-    tocDiv = document.getElementById('toc-links');
-    contentDiv = document.getElementById('chapter-content');
-
-    // Check if elements exist
-    if (!tocDiv || !contentDiv) {
-        console.error('Required DOM elements not found. Make sure "toc-links" and "chapter-content" elements exist.');
-        return;
-    }
-
-    const chapters = await loadNovelContent();
-    
-    // Create TOC links
-    Object.keys(chapters).forEach(chapterTitle => {
-        const link = document.createElement('span');
-        link.className = 'chapter-link';
-        link.textContent = chapterTitle;
-        link.onclick = () => loadChapter(chapterTitle, chapters);
-        tocDiv.appendChild(link);
-    });
-    
-    // Handle browser back/forward buttons
-    window.onpopstate = function(event) {
-        if (event.state && event.state.chapter) {
-            loadChapter(event.state.chapter, chapters);
-        }
-    };
-    
-    // Load chapter from URL hash on page load
-    const hash = decodeURIComponent(window.location.hash.slice(1));
-    if (hash && chapters[hash]) {
-        loadChapter(hash, chapters);
-    }
-}
-
-// Wait for DOM to be fully loaded before initializing
-document.addEventListener('DOMContentLoaded', initializePage);
