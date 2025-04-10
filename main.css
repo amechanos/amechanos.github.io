@@ -564,3 +564,45 @@ nav {
 .resume {
   transition: color 0.6s ease-in-out;
 }
+
+.ncontainer {
+  position: relative;
+  border: 3px solid var(--text);
+  height: auto;
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2ch 0;
+  overflow: hidden;
+}
+.ncontainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(160, 161, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.ncontainer:hover::before {
+  left: 0;
+}
+
+.ncontainer h2,
+.ncontainer p {
+  position: relative;
+  z-index: 1;
+}
+
+.ncontainer p {
+  width: 80%;
+  margin: 0 0 0 1em;
+}
+
+.ncontainer h2 {
+  margin: 0 0 0 1rem;
+}
