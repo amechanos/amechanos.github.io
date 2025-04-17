@@ -165,30 +165,37 @@ nav {
     height: auto;
 }
 .logoimage {
-    cursor: pointer;
-    margin-right: 5%;
-    margin-left: 2%;
-    display: flex;
-    align-items: center;
-    transition: all 0.85s cubic-bezier(.43,.43,.34,.79)
-} 
+  cursor: pointer;
+  margin-right: 5%;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+}
+
 .logoimage:hover {
-    transform: rotate(180deg);
+  animation: fullRotate 0.85s cubic-bezier(.59,.2,.48,.79) forwards;
+}
+
+@keyframes fullRotate {
+  to {
+      transform: rotate(180deg);
+  }
 }
 .logotext {
     max-width: 30%;
     display: flex;
     justify-content: center;
     height: auto;
-    align-items: flex-end;
+    align-items: center;
 }
+
 .bg  {
   width: 100%;
   height: 425px;
   background-image: url("assets/banner.png");
   background-size: cover;
   background-attachment: fixed;
-  background-position-y: 65%;
+  background-position-y: 0%;
   position: absolute;
   opacity: 0.7;
   z-index: -999999;
@@ -286,7 +293,7 @@ nav {
   -webkit-font-smoothing: antialiased;
   transform-origin: 175% 0%;
   transform: translate(500%, 0);
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  transition: all 0.5s cubic-bezier(.8,.2,.4,.7);
 }
 #menu li {
   display: inline-block; 

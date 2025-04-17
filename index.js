@@ -127,3 +127,22 @@ function loadChapter(chapterTitle) {
     
     history.pushState({chapter: chapterTitle}, '', `#${encodeURIComponent(chapterTitle)}`);
 }
+
+const logo = document.querySelector('.logoimage');
+let isRotated = false;
+
+logo.addEventListener('mouseenter', () => {
+  console.log("Enter")
+  if (!isRotated) {
+    logo.style.transform = 'rotate(180deg)';
+    console.log("180")
+  } else {
+    logo.style.transform = 'rotate(360deg)';
+    console.log("360")
+  }
+});
+
+logo.addEventListener('mouseleave', () => {
+  console.log("Leave")
+  isRotated = !isRotated;
+});
