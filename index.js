@@ -187,6 +187,28 @@ function updateChapterButtons() {
     document.getElementById('next-chapter').disabled = index >= keys.length - 1;
 }
 
+function setupNovelSelection() {
+    const projects = document.querySelectorAll('.book');
+
+    projects.forEach(project => {
+        project.style.cursor = 'pointer'; // Optional: make it look clickable
+
+        project.addEventListener('click', () => {
+            const novelName = project.getAttribute('data-novel');
+            if (novelName) {
+                loadNovel(novelName);
+            } else {
+                console.warn('No novel specified for this project.');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupNovelSelection();
+});
+
+//------------------------------------------------------------------
 
 const logo = document.querySelector('.logoimage');
 let isRotated = false;
