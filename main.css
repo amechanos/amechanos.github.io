@@ -560,7 +560,7 @@ nav {
   border-bottom: 2px solid var(--text);
 }
 .chapter-text {
-  width: 80%
+  width: 91%
 }
 .chapter-text > p, span{
   margin-bottom: 1.5rem;
@@ -612,4 +612,39 @@ nav {
 
 .ncontainer h2 {
   margin: 0 0 0 1rem;
+}
+
+#chapter-controls {
+  margin: 2rem auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: #1e1e1e;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  max-width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+#chapter-controls button {
+  background-color: #2d2d2d;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#chapter-controls button:hover {
+  background-color: #3a3a3a;
+  transform: scale(1.05);
+}
+
+#chapter-controls button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
 }

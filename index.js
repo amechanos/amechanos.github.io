@@ -44,6 +44,7 @@ async function loadNovel(novelName) {
             link.className = 'chapter-link';
             link.textContent = chapterTitle;
             link.onclick = () => loadChapter(chapterTitle);
+            setupChapterNavigationButtons(); 
             tocDiv.appendChild(link);
         });
         
@@ -105,28 +106,87 @@ async function loadNovelContent(name) {
     }
 }
 
+// Track current chapter title
+let currentChapterTitle = '';
+
 function loadChapter(chapterTitle) {
     if (!currentChapters || !currentChapters[chapterTitle]) {
         console.error('Chapter not found:', chapterTitle);
         return;
     }
-    
+
+    currentChapterTitle = chapterTitle;
+
     contentDiv.innerHTML = `
         <div class="chapter-text">
             <h2>${chapterTitle}</h2>
             ${currentChapters[chapterTitle]}
         </div>
     `;
-    
+
     document.querySelectorAll('.chapter-link').forEach(link => {
         link.classList.remove('active-chapter');
         if (link.textContent === chapterTitle) {
             link.classList.add('active-chapter');
         }
     });
-    
-    history.pushState({chapter: chapterTitle}, '', `#${encodeURIComponent(chapterTitle)}`);
+
+    history.pushState({ chapter: chapterTitle }, '', `#${encodeURIComponent(chapterTitle)}`);
+    updateChapterButtons();
 }
+
+function setupChapterNavigationButtons() {
+    const prevBtn = document.getElementById('prev-chapter');
+    const nextBtn = document.getElementById('next-chapter');
+    const topBtn = document.getElementById('back-to-top');
+    const contentContainer = document.getElementById('chapter-content'); // Assuming this exists
+    
+    // Function to scroll to the appropriate position
+    const scrollToChapterStart = () => {
+        // Option 1: Scroll to content container with offset
+        if (contentContainer) {
+            const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+            const position = contentContainer.offsetTop - headerHeight - 20; // 20px extra padding
+            window.scrollTo({ top: position, behavior: 'smooth' });
+        } 
+        // Option 2: Use percentage of viewport height as fallback
+        else {
+            const viewportHeight = window.innerHeight;
+            window.scrollTo({ top: viewportHeight * 0.15, behavior: 'smooth' }); // 15% from the top
+        }
+    };
+
+    prevBtn.onclick = () => {
+        const keys = Object.keys(currentChapters);
+        const index = keys.indexOf(currentChapterTitle);
+        if (index > 0) {
+            loadChapter(keys[index - 1]);
+            // Wait briefly for the chapter to load before scrolling
+            setTimeout(scrollToChapterStart, 10);
+        }
+    };
+
+    nextBtn.onclick = () => {
+        const keys = Object.keys(currentChapters);
+        const index = keys.indexOf(currentChapterTitle);
+        if (index < keys.length - 1) {
+            loadChapter(keys[index + 1]);
+            setTimeout(scrollToChapterStart, 10);
+        }
+    };
+
+    topBtn.onclick = scrollToChapterStart;
+}
+
+
+// Enable/disable buttons depending on position
+function updateChapterButtons() {
+    const keys = Object.keys(currentChapters);
+    const index = keys.indexOf(currentChapterTitle);
+    document.getElementById('prev-chapter').disabled = index <= 0;
+    document.getElementById('next-chapter').disabled = index >= keys.length - 1;
+}
+
 
 const logo = document.querySelector('.logoimage');
 let isRotated = false;
