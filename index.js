@@ -3,52 +3,39 @@ window.onscroll = function() {
     var scrollPosition = window.scrollY;
     document.querySelector('.bg').style.backgroundPositionY = (-scrollPosition * 1.5) + 'px';
 };
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+//------------------------------------------------------------------
 
-// Global variables to store references and current state
 let tocDiv, contentDiv, currentChapters;
-
-// Main function to load a novel by name
 async function loadNovel(novelName) {
     if (!novelName) {
         console.error('Novel name is required');
         return;
     }
-    
-    // Get DOM elements
     tocDiv = document.getElementById('toc-links');
     contentDiv = document.getElementById('chapter-content');
-    
-    // Check if elements exist
     if (!tocDiv || !contentDiv) {
         console.error('Required DOM elements not found');
         return;
     }
-    
-    // Clear previous content
     tocDiv.innerHTML = '';
     contentDiv.innerHTML = '<p>Loading story content...</p>';
-    
     try {
-        // Load novel content
         currentChapters = await loadNovelContent(novelName);
-        
-        // Check if we got any chapters
         if (Object.keys(currentChapters).length === 0) {
             contentDiv.innerHTML = '<p>No chapters found for this story.</p>';
             return;
         }
         
-        // Create TOC links
         Object.keys(currentChapters).forEach(chapterTitle => {
             const link = document.createElement('span');
             link.className = 'chapter-link';
             link.textContent = chapterTitle;
             link.onclick = () => loadChapter(chapterTitle);
-            setupChapterNavigationButtons(); 
             tocDiv.appendChild(link);
         });
-        
-        // Load the first chapter by default or from URL hash
+        setupChapterNavigationButtons();
         const hash = decodeURIComponent(window.location.hash.slice(1));
         if (hash && currentChapters[hash]) {
             loadChapter(hash);
@@ -57,7 +44,6 @@ async function loadNovel(novelName) {
             loadChapter(firstChapter);
         }
         
-        // Handle browser back/forward buttons
         window.onpopstate = function(event) {
             if (event.state && event.state.chapter) {
                 loadChapter(event.state.chapter);
@@ -98,17 +84,21 @@ async function loadNovelContent(name) {
             
             chapters[title] = content.join('');
         });
-        
+        const totalChapters = Object.keys(chapters).length;
+        const rows = Math.ceil(totalChapters / 3);
+
+        const tocDiv = document.getElementById('toc-links');
+        tocDiv.style.gridTemplateRows = `repeat(${rows}, auto)`;
         return chapters;
     } catch (error) {
         console.error('Error loading novel:', error);
         return {};
     }
+    
+
 }
 
-// Track current chapter title
 let currentChapterTitle = '';
-
 function loadChapter(chapterTitle) {
     if (!currentChapters || !currentChapters[chapterTitle]) {
         console.error('Chapter not found:', chapterTitle);
@@ -116,7 +106,6 @@ function loadChapter(chapterTitle) {
     }
 
     currentChapterTitle = chapterTitle;
-
     contentDiv.innerHTML = `
         <div class="chapter-text">
             <h2>${chapterTitle}</h2>

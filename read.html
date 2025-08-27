@@ -47,28 +47,20 @@
                 <div class="logotext"><img src="logo/light-text.png" height="40%px"></div>
             </div>
         </header>
-        <div class="wrapper">
-            <div class="project book" data-novel="novem">
-                <div class="ncontainer">
-                        <h2> The Universe of Novem </h2>
-                        <p> Follow 19-Year-Old Anthropologist turned Superhero Elias Novem across mysterious supernatural cases around the world, fighting the notorious scheme of Anateros. </p>
-                </div>
-            </div>
-            <div class="project book" data-novel="woto">
-                <div class="ncontainer">                 
-                        <h2> Wrath of the Outback </h2>
-                        <p> 2012 TV Show 'Slugterra' Spin-off. Set under Australia, follow Ashley Thyst's journey to become the protector of the Southern Caverns. </p>
-                </div>
-            </div>
-        </div>
-        <div class=" centered wrapper">
+        <div class="centered wrapper">
+            <h1 style="text-align: center;"> Novem's Cosmos </h1>
+            <p style="text-align: center; margin-bottom: 1rem;"> The vast collection supernatural and philisophical thriller short stories! </p>
+                <div class="selector">
+                    <h2 onclick="loadNovel('Volume 1')"> Volume 1 </h2>                        
+                    <h2 onclick="loadNovel('Volume 2')"> Volume 2 </h2>                             
+                    <h2 onclick="loadNovel('Volume 3')"> Volume 3 </h2>
+                </div> 
             <div id="table-of-contents">
-                <h2>Table of Contents</h2>
                 <div id="toc-links"></div>
             </div>
             
             <div id="chapter-content">
-                <p>Select a chapter from the table of contents to begin reading.</p>
+                <p>Select a story from the table of contents to begin reading.</p>
             </div>
             <div id="chapter-controls">
                 <button id="prev-chapter">&#9668;</button>
@@ -76,7 +68,6 @@
                 <button id="next-chapter">&#9658;</button>
             </div>            
         </div>
-        <div class="divider"></div>
 
     <footer>
         <div class="links">
