@@ -162,7 +162,12 @@ nav {
 .logowrap {
     display: flex;
     justify-content: center;
-    height: auto;
+    margin-top: 5rem;
+    margin-bottom: 2.1rem;
+}
+.logowrap img {
+    height: 40%;
+    margin: 0;
 }
 .logoimage {
   cursor: pointer;
@@ -171,24 +176,14 @@ nav {
   display: flex;
   align-items: center;
 }
-
 .logoimage:hover {
   animation: fullRotate 0.85s cubic-bezier(.59,.2,.48,.79) forwards;
 }
-
 @keyframes fullRotate {
   to {
       transform: rotate(180deg);
   }
 }
-.logotext {
-    max-width: 30%;
-    display: flex;
-    justify-content: center;
-    height: auto;
-    align-items: center;
-}
-
 .bg  {
   width: 100%;
   height: 425px;
@@ -532,18 +527,29 @@ nav {
 /*------------READING--------------------------*/
 /*-------------------------------------------------------------*/
 #toc-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem; /* Adds spacing between items */
+  display: grid;
+  grid-auto-flow: column;         
+  grid-template-columns: repeat(3, minmax(120px, auto));          
+  gap: 1rem;
+  padding: 10px 0;
 }
+
+@media screen and (max-width: 520px){
+  #toc-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 0;
+    padding-bottom: 0;
+  }
+}
+
 #toc-links > span {
-  display: inline-block;
   padding: 5px 10px;
   margin-right: 0;
 }
-#toc-links > span:last-child {
-  border-right: none; /* Removes border from last item */
-}
+
 .chapter-link {
   display: inline-block;
   text-decoration: none;
@@ -647,4 +653,43 @@ nav {
   background-color: #444;
   cursor: not-allowed;
   opacity: 0.6;
+}
+/*-------------------------------------------------------------*/
+/*------------READING ASSIST------------------------------------*/ 
+/*-------------------------------------------------------------*/
+
+.selector {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: var(--text) 2px solid;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.selector h2 {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin: auto;
+  width: fit-content;
+}
+
+.selector h2:hover {
+  color: var(--accent);
+}
+
+@media screen and (max-width: 418px){
+
+  .selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .selector h2 {
+    margin: 0.5rem 0;
+  }
 }

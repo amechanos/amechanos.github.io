@@ -16,70 +16,68 @@
         <script defer src="index.js"></script>
     </head>
     <body>
-        <div class="bg"></div>
-        <nav>
-            <div class="navbar">
-                <div class="logoimage">
-                    <img src="logo/light-icon.png" height="40px">
-                </div>
-                <ul class="nav-list">
-                    <li><a href="/index.html">Home</a></li>
-                    <li> <a href="/store.html">Store</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/read.html">Read</a></li>
-                </ul>
-                <div id="menuToggle">
-                    <input type="checkbox">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <ul id="menu">
+        <header> 
+            <nav>
+                <div class="navbar">
+                    <div class="logoimage">
+                        <img src="logo/light-icon.png" height="40px">
+                    </div>
+                    <ul class="nav-list">
                         <li><a href="/index.html">Home</a></li>
-                        <li> <a href="/store.html">Store</a></li>
                         <li><a href="/about.html">About</a></li>
                         <li><a href="/read.html">Read</a></li>
                     </ul>
+                    <div id="menuToggle">
+                        <input type="checkbox">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu">
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/read.html">Read</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <header> 
+            </nav>
+            <div class="bg"></div>
             <div class="logowrap">    
-                <div class="logotext"><img src="logo/light-text.png" height="40%px"></div>
+                <img src="logo/light-text.png">
             </div>
         </header>
-        <div class="centered wrapper">
-            <h1 style="text-align: center;"> Novem's Cosmos </h1>
-            <p style="text-align: center; margin-bottom: 1rem;"> The vast collection supernatural and philisophical thriller short stories! </p>
-                <div class="selector">
-                    <h2 onclick="loadNovel('Volume 1')"> Volume 1 </h2>                        
-                    <h2 onclick="loadNovel('Volume 2')"> Volume 2 </h2>                             
-                    <h2 onclick="loadNovel('Volume 3')"> Volume 3 </h2>
-                </div> 
-            <div id="table-of-contents">
-                <div id="toc-links"></div>
+        <section>
+            <div class="centered wrapper">
+                <h1 style="text-align: center;"> Novem's Cosmos </h1>
+                <p style="text-align: center;"> The vast collection supernatural and philisophical thriller short stories! </p>
+                    <div class="selector">
+                        <h2 onclick="loadNovel('Volume 1')"> Volume 1 </h2>                        
+                        <h2 onclick="loadNovel('Volume 2')"> Volume 2 </h2>                             
+                        <h2 onclick="loadNovel('Volume 3')"> Volume 3 </h2>
+                    </div> 
+                <div id="table-of-contents">
+                    <div id="toc-links"></div>
+                </div>
+                
+                <div id="chapter-content">
+                    <p>Select a story from the table of contents to begin reading.</p>
+                </div>
+                <div id="chapter-controls">
+                    <button id="prev-chapter">&#9668;</button>
+                    <button id="back-to-top">&#9650;</button>
+                    <button id="next-chapter">&#9658;</button>
+                </div>            
             </div>
-            
-            <div id="chapter-content">
-                <p>Select a story from the table of contents to begin reading.</p>
-            </div>
-            <div id="chapter-controls">
-                <button id="prev-chapter">&#9668;</button>
-                <button id="back-to-top">&#9650;</button>
-                <button id="next-chapter">&#9658;</button>
-            </div>            
-        </div>
-
-    <footer>
-        <div class="links">
-            <a href="https://storm-okapi-90a.notion.site/1f1b7897c4e280bca573d03e29819de0?v=1f1b7897c4e28058b292000cd5a8026d&pvs=4" class="icon" style="color: white; width: 22px;"> <img src="assets/wikipedia.png" width="22px"> </a>
-            <a href="https://open.spotify.com/artist/69YiNb7bGO98SmJ7qL0Jh2?" class="icon"> <img src="assets/spotify.png" width="22px"> </a>
-            <a href="https://youtube.com/@jhxu" class="icon"> <img src="assets/youtube.png" width="22px"> </a>
-            <a href="https://instagram.com/jhxu_07" class="icon"> <img src="assets/instagram.png" width="22px"> </a>
-            <a href="https://discord.com/invite/EV6bWSaA6b" class="icon" > <img src="assets/discord.png" width="22px"> </a>
-            <a href="https://linkedin.com/in/jhxu07" class="icon"> <img src="assets/linkedin.png" width="22px"> </a>
-        </div>   
-        Copyright © jhxu 2024   
-    </footer>
-
-</body>
+        </section>
+        <footer>
+            <div class="links">
+                <a href="https://storm-okapi-90a.notion.site/1f1b7897c4e280bca573d03e29819de0?v=1f1b7897c4e28058b292000cd5a8026d&pvs=4" class="icon" style="color: white; width: 22px;"> <img src="assets/wikipedia.png" width="22px"> </a>
+                <a href="https://open.spotify.com/artist/69YiNb7bGO98SmJ7qL0Jh2?" class="icon"> <img src="assets/spotify.png" width="22px"> </a>
+                <a href="https://youtube.com/@jhxu" class="icon"> <img src="assets/youtube.png" width="22px"> </a>
+                <a href="https://instagram.com/jhxu_07" class="icon"> <img src="assets/instagram.png" width="22px"> </a>
+                <a href="https://discord.com/invite/EV6bWSaA6b" class="icon" > <img src="assets/discord.png" width="22px"> </a>
+                <a href="https://linkedin.com/in/jhxu07" class="icon"> <img src="assets/linkedin.png" width="22px"> </a>
+            </div>   
+            Copyright © jhxu 2024   
+        </footer>
+    </body>
 </html>
