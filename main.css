@@ -76,25 +76,40 @@ ul, a, li {
 /*-------------------------------------------------------------*/
 .wrapper {
     z-index: 25;
-    width: 70vw;
+    width: 50vw;
     height: auto;
-    margin: 2rem auto;
+    margin: 2.5rem auto;
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
     flex-direction: column;
+    padding: 1rem;
 }
-.wrapper > h1, p {
-  margin: 1ch 0 0 0; 
+.divider {
+  width: 30vw;
+  height: 2px;
+  border-bottom: 2px solid var(--text);
+  margin: 2rem auto;
 }
 .wrapper > p {
-  opacity: 0.8
+  opacity: 0.9;
+}
+.centered {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .block {
     display: inline-block;
     width: min(100% - 3rem, 60ch);
     margin: 0 1rem;
     height: auto;
+}
+@media screen and (max-width: 990px){
+  .wrapper {
+    width: 90vw;
+    margin: 2rem;
+  }
 }
 /*-------------------------------------------------------------*/
 /*-------------FOOTER-------------------------*/
@@ -142,9 +157,9 @@ header {
     color: var(--text);
 }
 .navbar > ul > li {
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 4vw;
-    transition: 0.2s ease-out;
+    transition: all 0.2s ease-out;
     width: auto;
     display: flex;
     align-items: right;
@@ -152,7 +167,7 @@ header {
 }
 .navbar > ul > li:hover {
     opacity: 0.7;
-    transform: scale(1.01);
+    border-bottom: 3px solid var(--text);
 }
 .logowrap {
     display: flex;
@@ -163,13 +178,13 @@ header {
     perspective: 1000px;
 }
 .logowrap img {
-    max-width: 80%;
+    max-width: 80vw;
     height: auto;
     display: block;
     transition: all 0.3s ease;  
     cursor: pointer;
     position: relative;  
-    right: 1rem;
+    right: 0.9rem;
 } 
 .logowrap img:hover { 
   transform: scale(1.01); 
@@ -231,34 +246,14 @@ header {
 /*-------------------------------------------------------------*/
 /*-----------PROJECT AND DIVIDERS------------------------------*/
 /*-------------------------------------------------------------*/
-.divider {
-  height: 75px;
-  width: 60%;
-  display: flex;
-  margin: auto;
-  border-bottom: 3px solid var(--text) ;
-}
-.divider-two {
-  opacity: 0.2;
-  height: auto;
-  width: 20%;
-  display: flex;
-  margin: auto;
-  margin-bottom: 2rem;
-  border-top: 3px solid var(--text) ;
-}
 .pcontainer {
-  position: relative;
   border: 3px solid var(--text);
-  height: 100px;
-  width: 100%;
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  padding: 1ch 0;
+  height: 7rem;
+  position: relative;
   overflow: hidden;
+  margin: 1rem 0;
+  padding-left: 1ch;
 }
-
 .pcontainer::before {
   content: "";
   position: absolute;
@@ -270,55 +265,13 @@ header {
   transition: all 0.3s ease-in-out;
   z-index: -1;
 }
-
 .pcontainer:hover::before {
   left: 0;
-}
-
-.pcontainer h2,
-.pcontainer p {
-  position: relative;
-  z-index: 1;
-}
-
-.pcontainer p {
-  width: 100%;
-  margin: 0 0 0 1em;
-}
-
-.pcontainer h2 {
-  margin: 0 0 0 1rem;
-}
-
-.project {
-  transition: all 0.3s ease-in;
-}
-
-.project:hover {
-  opacity: 0.85;
-  transform: scale(1.01);
-}
-
-@media screen and (max-width: 990px){
-  .pcontainer p {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 520px){
-  .pcontainer p {
-    width: 90%;
-  }
+  transition: all 0.3s ease-in-out;
 }
 /*-------------------------------------------------------------*/
 /*------------VIDEO AND MUSIC EMBEDS --------------------------*/
 /*-------------------------------------------------------------*/
-.centered {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .latest-video, .music-embed {
   display: flex;
   justify-content: center;
@@ -327,17 +280,6 @@ header {
   margin-bottom: 2rem;
   width: auto;
   height: auto;
-}
-.centered div h1 {margin-top: 0;}
-.store {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1.1rem;
-  padding: 0.75rem;
-  border: 3px solid white;
-  transition: all 0.3s ease-in;
 }
 .video-container {
   position: relative;
@@ -348,21 +290,6 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-}
-@media screen and (max-width: 990px){
-  .store {
-    width: 90%;
-  }
-  .posterStore {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    margin-top: 20vh;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 /*-------------------------------------------------------------*/
 /*------------READING--------------------------*/
@@ -412,13 +339,6 @@ header {
 .chapter-text > p, span{
   margin-bottom: 1.5rem;
 }
-.resume:hover{
-  color: rgb(88, 226, 185);
-}
-.resume {
-  transition: color 0.6s ease-in-out;
-}
-
 .ncontainer {
   position: relative;
   border: 3px solid var(--text);
@@ -533,4 +453,11 @@ header {
   .selector h2 {
     margin: 0.5rem 0;
   }
+}
+.resume:hover{
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+.resume {
+  transition: all 0.3s ease-in-out;
 }
