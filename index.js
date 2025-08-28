@@ -200,7 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //------------------------------------------------------------------
 
 const logo = document.querySelector('.logoimage');
+const menu = document.querySelector('#menu');
 let isRotated = false;
+let menuOpen = false;
 
 logo.addEventListener('mouseenter', () => {
   console.log("Enter")
@@ -217,3 +219,7 @@ logo.addEventListener('mouseleave', () => {
   console.log("Leave")
   isRotated = !isRotated;
 });
+
+logo.addEventListener('onclick', () => {
+    console.log("Leave")
+})
