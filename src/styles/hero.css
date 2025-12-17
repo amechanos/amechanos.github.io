@@ -1,0 +1,24 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 1.25rem;
+}
+
+.hero .eyebrow { color: var(--accent); margin: 0 0 0.5rem 0; font-weight:600 }
+.hero-title { font-size: clamp(2rem, 4vw, 3.25rem); margin: 0; color: var(--text); }
+.hero-sub { color: var(--muted); margin-top: 0.75rem; max-width: 52ch }
+
+.hero-cta { margin-top: 1.25rem; display:flex; gap:0.75rem }
+.btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:600 }
+.btn.primary { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:var(--bg) }
+.btn.ghost { background:transparent; border:1px solid var(--glass); color:var(--text) }
+
+.hero-visual { display:flex; align-items:center; justify-content:center }
+.avatar { width:220px; height:220px; border-radius:18px; background: linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:var(--bg); font-size:3rem; font-weight:700 }
+
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; text-align:left }
+  .hero-visual { justify-self: start }
+} 

@@ -1,0 +1,25 @@
+/* using global color variables from :root */
+
+.site-root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #050407 0%, var(--bg) 100%);
+  color: var(--text);
+} 
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main { padding-bottom: 4rem }
+
+.logo {
+  height: 3.5rem;
+  padding: 0.5rem;
+}
+.logo:hover { filter: drop-shadow(0 0 1.8em rgba(199,179,255,0.12)); }
+
+@media (max-width: 640px) {
+  .container { padding: 0 0.9rem }
+}

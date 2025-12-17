@@ -1,0 +1,60 @@
+:root {
+  /* Dark minimalist palette with lavender accents */
+  --bg: #030816;         /* near-black page background */
+  --card: #0f1316;       /* card / surface */
+  --muted: #9aa0b3;      /* subdued text */
+  --accent: #c7b3ff;     /* lavender accent */
+  --accent-2: #8f78ff;   /* deeper lavender */
+  --text: #eef0ff;       /* primary text color */
+  --glass: rgba(255,255,255,0.03);
+  --focus: rgba(199,179,255,0.16);
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+* { box-sizing: border-box }
+
+html, body, #root { height: 100%; }
+
+.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden }
+.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem .75rem; background: var(--card); color: var(--text); border-radius: 6px }
+
+body {
+  z-index: 10;
+  margin: 0;
+  background: linear-gradient(180deg, #120e1a 0%, var(--bg) 100%);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; font-weight: 600 }
+
+h1,h2,h3 { color: var(--text); margin: 0 }
+
+.container { margin: 0 auto; max-width: 1100px; padding: 0 1.25rem }
+
+@media (max-width: 640px) { .container { padding: 0 0.9rem } }
+
+/* Focus styles for interactive elements */
+button:focus,
+.btn:focus,
+a:focus { outline: none; box-shadow: 0 0 0 4px var(--focus); border-radius: 8px }
+
+/* Subtle card surface utility */
+.surface { background: linear-gradient(180deg, rgba(255,255,255,0.012), transparent); border-radius: 10px }
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.2;
+}
