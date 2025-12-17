@@ -4,7 +4,7 @@ export const projects = [
     title: 'Spaceslinger',
     description: 'An action-packed 2D puzzle-adventure game for my Unit 3/4 VCE Media Studies Product.',
     tech: ['Godot ', 'GDScript', 'Photoshop'],
-    url: 'https://drive.google.com/file/d/1kCO8PJJCBTlliC-gzucdr72rxamUPOYF/view?usp=sharing',
+    url: 'https://jhxu.itch.io/spaceslinger',
   },
   {
     id: 'project-2',
