@@ -34,7 +34,7 @@ export default function Header() {
           <div className="brand">
               <img
                 className="logo"
-                src="src/assets/logo.svg"
+                src="/src/assets/logo.svg"
                 alt="site logo"
                 width={55}
                 onMouseEnter={() => setRotation(r => r + 180)}
