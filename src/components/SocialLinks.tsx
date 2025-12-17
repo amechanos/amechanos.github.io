@@ -1,4 +1,3 @@
-import React from 'react'
 import "../styles/social.css";
 
 export default function SocialLinks({ className = '' }: { className?: string }) {

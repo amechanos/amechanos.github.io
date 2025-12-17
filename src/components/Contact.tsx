@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Contact() {
   return (
     <section id="contact" className="container" style={{ padding: '3rem 0' }}>

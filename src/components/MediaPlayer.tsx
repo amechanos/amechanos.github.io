@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/mediaPlayer.css"; 
 
 export function Media() {

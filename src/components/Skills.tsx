@@ -1,5 +1,3 @@
-import React from 'react'
-
 const skills = ['Godot', 'GDScript', 'Photoshop', 'Illustrator', 'Figma', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React']
 
 export default function Skills(){
