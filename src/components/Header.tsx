@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/header.css";
 import SocialLinks from './SocialLinks'
+import logo from '../assets/logo.svg'; 
 
 export default function Header() {
   const [rotation, setRotation] = useState(0);
@@ -34,7 +35,7 @@ export default function Header() {
           <div className="brand">
               <img
                 className="logo"
-                src="/public/logo.png"
+                src={logo}
                 alt="site logo"
                 width={55}
                 onMouseEnter={() => setRotation(r => r + 180)}
