@@ -4,6 +4,7 @@
   background: linear-gradient(180deg, rgba(9, 1, 24, 0.02), rgba(1, 1, 24, 0.15));
   backdrop-filter: blur(6px);
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 40;
   border-bottom: 2px solid var(--glass);
@@ -32,6 +33,7 @@
 .brand-link { text-decoration: none; color: inherit; display: inline-block }
 .brand-link:focus { outline: none; box-shadow: 0 0 0 4px var(--focus); border-radius: 8px }
 .brand-link .brand { cursor: pointer }
+.brand h2 { font-size: 1.25rem; }
 
 .logo {
     transition: transform 800ms cubic-bezier(.6,.2,.5,1);
@@ -97,7 +99,7 @@
 .social-links a:focus { color: var(--text); transform: translateY(-2px); outline: none }
 .social-links a:focus { box-shadow: 0 0 0 4px var(--focus); border-radius:8px }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .nav { 
     position: absolute;
     left: 0;

@@ -14,47 +14,125 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 72px; 
+  width: 100%;
+}
 
-* { box-sizing: border-box }
+* { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html, body, #root { height: 100%; }
-
-.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden }
-.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem .75rem; background: var(--card); color: var(--text); border-radius: 6px }
+html, body, #root { 
+  height: auto; 
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
 
 body {
-  z-index: 10;
+  z-index: 0;
   margin: 0;
-  background: linear-gradient(180deg, #120e1a 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #050407b9 25%, #030816ce 50%);
   color: var(--text);
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--accent); text-decoration: none; font-weight: 600 }
+a { 
+  color: var(--accent); 
+  text-decoration: none; 
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
 
-h1,h2,h3 { color: var(--text); margin: 0 }
+a:hover {
+  color: var(--accent-2);
+}
 
-.container { margin: 0 auto; max-width: 1100px; padding: 0 1.25rem }
+h1, h2, h3 { 
+  color: var(--text); 
+  margin: 0;
+  line-height: 1.2;
+}
 
-@media (max-width: 640px) { .container { padding: 0 0.9rem } body { width: 80%; display: flex; align-items: center;} }
+/* Responsive typography */
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+.container { 
+  margin: 0 auto; 
+  max-width: 1100px; 
+  padding: 0 1.25rem;
+  width: 100%;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) { 
+  .container { 
+    padding: 0 1rem;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 640px) { 
+  .container { 
+    padding: 0 1rem;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
 
 /* Focus styles for interactive elements */
 button:focus,
 .btn:focus,
-a:focus { outline: none; box-shadow: 0 0 0 4px var(--focus); border-radius: 8px }
+a:focus { 
+  outline: none; 
+  box-shadow: 0 0 0 4px var(--focus); 
+  border-radius: 8px;
+}
 
 /* Subtle card surface utility */
-.surface { background: linear-gradient(180deg, rgba(255,255,255,0.012), transparent); border-radius: 10px }
-
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  pointer-events: none;
-  opacity: 0.2;
+.surface { 
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), transparent); 
+  border-radius: 10px;
 }
+
+/* Ensure images and media are responsive */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow on small screens */
+p, li, span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+

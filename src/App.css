@@ -1,18 +1,22 @@
 /* using global color variables from :root */
 
 .site-root {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #050407 0%, var(--bg) 100%);
+  min-height: auto;
+  background: linear-gradient(180deg, #050407b9 25%, #030816 70%);
   color: var(--text);
+  overflow: hidden;
 } 
 
 .container {
-  max-width: 1100px;
+  width: 80%;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
-main { padding-bottom: 4rem }
+main { 
+  padding-bottom: 4rem; 
+  height: auto; 
+}
 
 .logo {
   height: 3.5rem;
@@ -20,6 +24,25 @@ main { padding-bottom: 4rem }
 }
 .logo:hover { filter: drop-shadow(0 0 1.8em rgba(199,179,255,0.12)); }
 
-@media (max-width: 640px) {
-  .container { padding: 0 0.9rem }
+.site-root, #main {
+  position: relative; 
+  width: 100%;
+}
+
+/*----------------------------------------------------------------------------------------------*/
+
+.parallax-bg {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 250vh; /* Make it taller */
+  background: url("/src/assets/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover;  */
+  will-change: transform;
 }

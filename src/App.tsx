@@ -9,24 +9,53 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { Media } from './components/MediaPlayer'
 
+import { useEffect } from 'react';
+
 function App() {
+  useEffect(() => {
+    console.log('useEffect running');
+    
+    const bgElement = document.querySelector('.parallax-bg');
+    console.log('bgElement found:', bgElement);
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      console.log('Scroll event fired, position:', scrollPosition);
+      
+      const bgElement = document.querySelector('.parallax-bg');
+      if (bgElement) {
+        console.log('Applying transform');
+        (bgElement as HTMLElement).style.transform = `translateY(${scrollPosition * -0.1}px)`;
+      } else {
+        console.log('bgElement not found during scroll');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="site-root">
-      <a className="skip-link" href="#main">Skip to content</a>
-      <div id="top" />
-      <Header />
-      <main id="main">
-        <Hero />
-        <Media />
-        <Projects />
-        <About />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  )
+    <>
+      <div className="site-root">
+        <div className="parallax-bg"></div>
+        <div id="top" />
+        <Header />
+        <main id="main">
+          <Hero />
+          <Media />
+          <Projects />
+          <About />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
 }
 
-export default App
-
+export default App;
