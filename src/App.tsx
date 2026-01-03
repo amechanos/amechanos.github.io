@@ -25,7 +25,7 @@ function App() {
       const bgElement = document.querySelector('.parallax-bg');
       if (bgElement) {
         console.log('Applying transform');
-        (bgElement as HTMLElement).style.transform = `translateY(${scrollPosition * -0.1}px)`;
+        (bgElement as HTMLElement).style.transform = `translateY(${scrollPosition * -0.17}px)`;
       } else {
         console.log('bgElement not found during scroll');
       }
