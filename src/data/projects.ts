@@ -41,4 +41,18 @@ export const projects = [
     tech: ['Godot', 'GDScript', 'Photoshop'],
     url: 'https://drive.google.com/file/d/1gcMREDcg9QdnNw9gdl81yVFQM69mx61r/view?usp=sharing',
   },
+  {
+    id: 'project-7',
+    title: 'Personal Website',
+    description: 'This very website! Built using React and TypeScript to showcase my projects and skills.',
+    tech: ['React', 'TypeScript', 'CSS'],
+    url: 'https://github.com/amechanos/amechanos.github.io'
+  },
+  {
+    id: 'project-8',
+    title: 'Slugterra: Wrath of the Outback',
+    description: 'A fan-fiction of Slugterra\'s Outback region in a web app, featuring interactive maps and character information.',
+    tech: ['React', 'TypeScript', 'CSS'],
+    url: 'https://slugterra-ruddy.vercel.app/'
+  }
 ]
