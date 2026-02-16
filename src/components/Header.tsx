@@ -63,10 +63,7 @@ export default function Header() {
           <a href="#about" className={active === '#about' ? 'active' : ''} onClick={() => handleNavClick('#about')}>About</a>
           <a href="#contact" className={`cta ${active === '#contact' ? 'active' : ''}`} onClick={() => handleNavClick('#contact')}>Contact</a>
         </nav>
-
-        <div className="header-actions" aria-hidden>
-          <SocialLinks />
-        </div>
+        
       </div>
     </header>
   );

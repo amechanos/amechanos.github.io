@@ -2,7 +2,7 @@ import './App.css'
 import './index.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Projects from './components/Projects'
+import Portfolio from './components/Portfolio'
 import About from './components/About'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
@@ -47,7 +47,7 @@ function App() {
         <main id="main">
           <Hero />
           <Media />
-          <Projects />
+          <Portfolio />
           <About />
           <Skills />
           <Contact />

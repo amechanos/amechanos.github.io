@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 'project-1',
     title: 'Spaceslinger',
-    description: 'An action-packed 2D puzzle-adventure game for my Unit 3/4 VCE Media Studies Product.',
+    description: 'An action-packed 2D puzzle-adventure game employing a unique drawing mechanic.',
     tech: ['Godot ', 'GDScript', 'Photoshop'],
     url: 'https://jhxu.itch.io/spaceslinger',
   },
@@ -14,45 +14,31 @@ export const projects = [
     url: 'https://jhxu.itch.io/bingbong',
   },
   {
-    id: 'project-3',
-    title: 'Iconography',
-    description: 'A set of icons inspired by tarot cards created for my Unit 1/2 VCE VCD project.',
-    tech: ['Illustrator', 'Photoshop'],
-    url: 'https://drive.google.com/file/d/1nwVkUSxnGEN9r1oZdcoiZiKYRH4GB00u/view?usp=sharing',
-  },
-  {
     id: 'project-4',
     title: 'Treed',
-    description: 'A simple experience inspired by Pokemon Go to motivate people to go outside and explore nature for my Unit 3/4 VCE VCD project.',
+    description: 'A simple experience inspired by Pokemon Go to motivate people to go outside and explore nature.',
     tech: ["Figma", "Illustrator", "Photoshop"],
     url: 'https://drive.google.com/file/d/1q5ZhNQZw8FAMxsghNpJ3bakaq8X6NDP0/view?usp=sharing',
   },
   {
-    id: 'project-5',
-    title: 'Picture This!',
-    description: 'A short animation using Adobe Animate for my Unit 1/2 VCE Media Studies project.',
-    tech: ['Adobe Animate', 'Photoshop'],
-    url: 'https://drive.google.com/file/d/139iDXKw-olR4vJ10PNR7PIJYuYyAXz3n/view?usp=sharing',
-  },
-  {
-    id: 'project-6',
-    title: 'MUSE Hub',
-    description: 'An interactive experience helping customers navigate a local art exhibition for my Unit 1/2 VCE VCD project.',
-    tech: ['Godot', 'GDScript', 'Photoshop'],
-    url: 'https://drive.google.com/file/d/1gcMREDcg9QdnNw9gdl81yVFQM69mx61r/view?usp=sharing',
-  },
-  {
     id: 'project-7',
-    title: 'Personal Website',
-    description: 'This very website! Built using React and TypeScript to showcase my projects and skills.',
-    tech: ['React', 'TypeScript', 'CSS'],
-    url: 'https://github.com/amechanos/amechanos.github.io'
+    title: 'Splashgrounds',
+    description: 'A 2D Basketball Platformer game made in Godot',
+    tech: ['Godot', 'GDScript', 'Illustrator'],
+    url: 'https://jhxu.itch.io/splashgrounds',
   },
   {
     id: 'project-8',
+    title: '24',
+    description: 'A mathematical card game where players must use four numbers and basic operations to make 24.',
+    tech: ['Godot', 'GDScript', 'Illustrator'],
+    url: 'https://jhxu.itch.io/twentyfour',
+  },
+  {
+    id: 'project-9',
     title: 'Slugterra: Wrath of the Outback',
-    description: 'A fan-fiction of Slugterra\'s Outback region in a web app, featuring interactive maps and character information.',
-    tech: ['React', 'TypeScript', 'CSS'],
-    url: 'https://slugterra-ruddy.vercel.app/'
+    description: 'An immersive and interactive website for a Slugterra fan project.',
+    tech: ['HTML', 'CSS', 'TypeScript', 'React'],
+    url: 'https://slugterra-ruddy.vercel.app',
   }
 ]
