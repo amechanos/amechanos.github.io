@@ -13,7 +13,8 @@ export default function Education() {
           <div className="card-body">
             <h3>{it.title}</h3>
             <p className="muted">{it.subtitle} • {it.year}</p>
-            <p>{it.desc}</p>
+            <br></br>
+            <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>{it.desc}</p>
           </div>
         </article>
       ))}
