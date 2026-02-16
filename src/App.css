@@ -2,7 +2,7 @@
 
 .site-root {
   min-height: auto;
-  background: linear-gradient(180deg, #050407b9 25%, #030816 70%);
+  background: #030816;
   color: var(--text);
   overflow: hidden;
 } 
@@ -43,6 +43,5 @@ main {
   background: url("/src/assets/banner.png");
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: cover;  */
   will-change: transform;
 }

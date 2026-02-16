@@ -35,9 +35,6 @@ html, body, #root {
 body {
   z-index: 0;
   margin: 0;
-  /* background: linear-gradient(180deg, #050407b9 25%, #030816ce 50%); */
-  background-position: fixed;
-  color: var(--text);
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;

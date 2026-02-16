@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "../styles/header.css";
-import SocialLinks from './SocialLinks'
 import logo from '../assets/logo.svg'; 
 
 export default function Header() {
@@ -63,7 +62,7 @@ export default function Header() {
           <a href="#about" className={active === '#about' ? 'active' : ''} onClick={() => handleNavClick('#about')}>About</a>
           <a href="#contact" className={`cta ${active === '#contact' ? 'active' : ''}`} onClick={() => handleNavClick('#contact')}>Contact</a>
         </nav>
-        
+
       </div>
     </header>
   );
