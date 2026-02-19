@@ -18,7 +18,7 @@ export const projects = [
     title: 'Treed',
     description: 'A simple experience inspired by Pokemon Go to motivate people to go outside and explore nature.',
     tech: ["Figma", "Illustrator", "Photoshop"],
-    url: 'https://drive.google.com/file/d/1q5ZhNQZw8FAMxsghNpJ3bakaq8X6NDP0/view?usp=sharing',
+    url: 'https://www.figma.com/proto/7kheuXFQpp6AzW9ne5x6zd/Treed?node-id=201-8&starting-point-node-id=201%3A8&t=3WvApkWBOazM6RyF-1',
   },
   {
     id: 'project-7',

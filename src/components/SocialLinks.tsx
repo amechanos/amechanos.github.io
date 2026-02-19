@@ -2,7 +2,6 @@ import "../styles/social.css";
 import youtube from '../assets/youtube.svg';
 import instagram from '../assets/instagram.svg';
 import linkedin from '../assets/linkedin.svg';
-import spotify from '../assets/spotify.svg';
 import discord from '../assets/discord.svg';
 
 export default function SocialLinks({ className = '' }: { className?: string }) {
@@ -21,11 +20,6 @@ export default function SocialLinks({ className = '' }: { className?: string }) 
         <li>
             <a href="https://linkedin.com/in/jhxu07" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <img src={linkedin} alt="" />
-            </a>
-        </li>
-        <li>
-            <a href="https://open.spotify.com/artist/69YiNb7bGO98SmJ7qL0Jh2?" aria-label="Spotify" title="Spotify" target="_blank" rel="noopener noreferrer">
-                <img src={spotify} alt="" />
             </a>
         </li>
         <li>

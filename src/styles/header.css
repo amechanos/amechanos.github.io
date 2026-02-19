@@ -1,7 +1,7 @@
 /* using global color variables from :root */
 
 .site-header {
-  background: linear-gradient(180deg, rgba(9, 1, 24, 0.02), rgba(1, 1, 24, 0.15));
+  background: linear-gradient(180deg, rgba(9, 1, 24, 0.1), rgba(1, 1, 24, 0.25));
   backdrop-filter: blur(6px);
   position: sticky;
   width: 100%;
