@@ -1,0 +1,56 @@
+.btn-back { 
+    display: inline-block; 
+    margin-top: 0.75rem; 
+    margin-bottom: 2rem;
+    color: var(--accent); 
+    font-weight: 600; 
+    transition: transform 0.3s cubic-bezier(.6,.2,.5,1);
+}
+
+.btn-back:hover { 
+    transform: translateX(-5px); 
+}
+
+.case-study-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.case-study-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0
+}
+
+.case-study-header > h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(15deg, var(--text) 0%, var(--accent-2) 35%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.retro-list {
+    padding-left: 1rem;
+}
+
+.retro-list li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+}
+
+.links-bar {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}

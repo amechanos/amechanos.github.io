@@ -35,14 +35,14 @@
 
 .switch-btn.active {
     color: #fff;
-    border-color: var(--accent);
+    border-color: var(--glass);
     box-shadow: 0 10px 30px rgba(2,6,23,0.35);
     transform: translateY(-2px) scale(1.01);
 }
 
 .switch-btn:hover {
     color: #fff;
-    border-color: var(--accent);
+    border-color: var(--glass);
     box-shadow: 0 14px 40px rgba(2,6,23,0.45);
 }
 

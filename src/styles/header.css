@@ -55,7 +55,7 @@
   border-radius: 6px;
 }
 
-.nav a:hover { color: var(--text); transform: translateY(-2px); }
+.nav a:hover { color: var(--text); transform: translateY(-1px); }
 .nav a:focus { outline: none; box-shadow: 0 0 0 4px var(--focus); border-radius: 6px; color: var(--text); }
 .nav a.active { color: var(--accent); font-weight: 700; }
 

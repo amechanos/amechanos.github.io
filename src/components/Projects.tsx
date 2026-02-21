@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <div className="projects-grid">
       {projects.map((p) => (
-        <ProjectCard key={p.id} title={p.title} description={p.description} tech={p.tech} url={p.url} />
+        <ProjectCard casestudy={p.casestudy} key={p.id} title={p.title} description={p.description} tech={p.tech} url={p.url} />
       ))}
     </div>
   )
