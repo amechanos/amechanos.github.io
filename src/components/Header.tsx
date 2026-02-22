@@ -61,10 +61,9 @@ export default function Header() {
         </button>
 
         <nav id="primary-nav" className={`nav ${menuOpen ? 'open' : ''}`} role="navigation" aria-label="Primary navigation">
-          {/* Use Link to to="/" so if you are on a Case Study page, these links actually take you home */}
-          <Link to="/#projects" className={active === '#projects' ? 'active' : ''} onClick={() => handleNavClick('#projects')}>Work</Link>
-          <Link to="/#about" className={active === '#about' ? 'active' : ''} onClick={() => handleNavClick('#about')}>About</Link>
-          <Link to="/#contact" className={`cta ${active === '#contact' ? 'active' : ''}`} onClick={() => handleNavClick('#contact')}>Contact</Link>
+          <a href="#projects" className={active === '#projects' ? 'active' : ''} onClick={() => handleNavClick('#projects')}>Work</a>
+          <a href="#about" className={active === '#about' ? 'active' : ''} onClick={() => handleNavClick('#about')}>About</a>
+          <a href="#contact" className={`cta ${active === '#contact' ? 'active' : ''}`} onClick={() => handleNavClick('#contact')}>Contact</a>
         </nav>
 
       </div>
