@@ -1,26 +1,28 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom"; // Use Link for cross-page navigation
 import "../styles/header.css";
 import logo from '../assets/logo.svg'; 
 
 export default function Header() {
   const [rotation, setRotation] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState<string>(typeof window !== 'undefined' ? window.location.hash || '#projects' : '#projects');
+  const location = useLocation(); // Better than window.location for React
+  const [active, setActive] = useState(location.hash || '#projects');
 
   useEffect(() => {
-    const onHashChange = () => setActive(window.location.hash || '#projects');
+    // Sync active state with the current hash
+    setActive(location.hash || '#projects');
+    
     const onResize = () => { if (window.innerWidth > 640 && menuOpen) setMenuOpen(false); };
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenuOpen(false); };
 
-    window.addEventListener('hashchange', onHashChange);
     window.addEventListener('resize', onResize);
     window.addEventListener('keydown', onKey);
     return () => {
-      window.removeEventListener('hashchange', onHashChange);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('keydown', onKey);
     };
-  }, [menuOpen]);
+  }, [location, menuOpen]);
 
   const handleNavClick = (hash: string) => {
     setActive(hash);
@@ -30,7 +32,8 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <a href="#top" className="brand-link" onClick={() => { setMenuOpen(false); setActive(''); }}>
+        {/* Change <a> to <Link> so it works from Case Study pages back to Home */}
+        <Link to="/#top" className="brand-link" onClick={() => { setMenuOpen(false); setActive(''); }}>
           <div className="brand">
               <img
                 className="logo"
@@ -43,7 +46,7 @@ export default function Header() {
               />
               <h2> jhxu </h2>
           </div>
-        </a>
+        </Link>
 
         <button
           className={`hamburger ${menuOpen ? 'open' : ''}`}
@@ -58,12 +61,13 @@ export default function Header() {
         </button>
 
         <nav id="primary-nav" className={`nav ${menuOpen ? 'open' : ''}`} role="navigation" aria-label="Primary navigation">
-          <a href="#projects" >Work</a>
-          <a href="#about" >About</a>
-          <a href="#contact" >Contact</a>
+          {/* Use Link to to="/" so if you are on a Case Study page, these links actually take you home */}
+          <Link to="/#projects" className={active === '#projects' ? 'active' : ''} onClick={() => handleNavClick('#projects')}>Work</Link>
+          <Link to="/#about" className={active === '#about' ? 'active' : ''} onClick={() => handleNavClick('#about')}>About</Link>
+          <Link to="/#contact" className={`cta ${active === '#contact' ? 'active' : ''}`} onClick={() => handleNavClick('#contact')}>Contact</Link>
         </nav>
 
       </div>
     </header>
   );
-} 
+}
