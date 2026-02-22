@@ -105,7 +105,7 @@
     left: 0;
     right: 0;
     top: 100%;
-    background: var(--card);
+    background: rgba(9, 8, 40, 0.95);
     margin: 0;
     padding: 0.6rem 1rem;
     flex-direction: column;

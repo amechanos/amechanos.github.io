@@ -26,9 +26,9 @@ function App() {
       if (bgElement && gradientElement) {
         bgElement.style.transform = `translateY(${scrollPosition * 0.5}px)`;
         // Your logic for the gradient
-        const targetTranslate = scrollPosition * -0.25;
-        const clampedTranslate = Math.min(targetTranslate, -750);
-        gradientElement.style.bottom = `${clampedTranslate}px`;
+        const targetTranslate = scrollPosition * 0.25;
+        const clampedTranslate = Math.min(targetTranslate, 0); // Ensure no positive translation
+        gradientElement.style.transform = `translateY(${clampedTranslate}px)`;
       }
     };
 
@@ -40,18 +40,16 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="site-root">
-        {/* Parallax layers stay here so they persist across page changes */}
+       
         <div className="parallax-bg"></div>
         <div className="parallax-gradient"></div>
         
         <Routes>
-          {/* Main Home Route */}
+          
           <Route path="/" element={<Home />} />
           
-          {/* Case Study Route */}
           <Route path="/work/:projectId" element={<CaseStudyPage />} />
           
-          {/* Fallback to Home */}
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

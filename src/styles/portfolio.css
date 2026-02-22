@@ -34,23 +34,26 @@
 }
 
 .switch-btn.active {
+    background: var(--accent);
     color: #fff;
-    border-color: var(--glass);
     box-shadow: 0 10px 30px rgba(2,6,23,0.35);
     transform: translateY(-2px) scale(1.01);
 }
 
 .switch-btn:hover {
     color: #fff;
-    border-color: var(--glass);
+    background: var(--accent);
+    border: 1px solid var(--glass);
     box-shadow: 0 14px 40px rgba(2,6,23,0.45);
 }
 
 .switch-btn:active {
+    border: 2px solid var(--glass);
     box-shadow: inset 0 3px 8px rgba(0,0,0,0.2);
 }
 
 .switch-btn:focus-visible {
+    border: 2px solid var(--glass);
     outline: 3px solid rgba(255,255,255,0.12);
     outline-offset: 4px;
 }

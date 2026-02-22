@@ -58,9 +58,9 @@ export default function Header() {
         </button>
 
         <nav id="primary-nav" className={`nav ${menuOpen ? 'open' : ''}`} role="navigation" aria-label="Primary navigation">
-          <a href="#projects" className={active === '#projects' ? 'active' : ''} onClick={() => handleNavClick('#projects')}>Work</a>
-          <a href="#about" className={active === '#about' ? 'active' : ''} onClick={() => handleNavClick('#about')}>About</a>
-          <a href="#contact" className={`cta ${active === '#contact' ? 'active' : ''}`} onClick={() => handleNavClick('#contact')}>Contact</a>
+          <a href="#projects" >Work</a>
+          <a href="#about" >About</a>
+          <a href="#contact" >Contact</a>
         </nav>
 
       </div>
