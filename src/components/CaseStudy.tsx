@@ -4,7 +4,7 @@ import { projectContent } from '../data/caseStudies'; // Adjust path as needed
 import Header from './Header'
 import Footer from './Footer'
 
-import '../styles/caseStudy.css'
+import '../styles/casestudy.css'
 
 export default function CaseStudyPage() {
   const { projectId } = useParams<{ projectId: string }>();
