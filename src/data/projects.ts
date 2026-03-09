@@ -46,5 +46,12 @@ export const projects = [
     description: 'An immersive and interactive website for a Slugterra fan project.',
     tech: ['HTML', 'CSS', 'TypeScript', 'React'],
     url: 'https://slugterra-ruddy.vercel.app',
-  }
+  },
+  {
+    id: 'project-7',
+    casestudy: false,
+    title: 'Chill Out!',
+    description: 'A winter themed bullet hell game, submitted for the Mini Jame Gam #52 on itch.io',
+    tech: ['Godot', 'GDScript', 'Aesprite'],
+    url: 'https://jhxu.itch.io/chill-out'
 ]
